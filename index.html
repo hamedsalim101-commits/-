@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>تحدي الكلمات - أبو سالم المقبالي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- شاشة الإعدادات واسماء اللاعبين -->
+    <div id="setup-screen" class="screen-setup">
+        <h1>🎮 تحدي الكلمات السريعة</h1>
+        <p>اختر عدد اللاعبين وادخل الأسماء:</p>
+
+        <div class="players-select">
+            <label for="player-count">عدد اللاعبين:</label>
+            <select id="player-count">
+                <option value="2">2 لاعبين</option>
+                <option value="3">3 لاعبين</option>
+                <option value="4" selected>4 لاعبين</option>
+                <option value="5">5 لاعبين</option>
+                <option value="6">6 لاعبين</option>
+            </select>
+        </div>
+
+        <div id="names-inputs-container" class="names-inputs"></div>
+
+        <button id="start-game-btn" class="btn-main">ابدأ التحدي 🚀</button>
+    </div>
+
+    <!-- شاشة اللعبة الرئيسية -->
+    <div id="game-screen" class="game-layout hidden">
+        
+        <!-- أزرار اللاعبين على اليمين -->
+        <div id="side-right" class="side-buttons"></div>
+
+        <!-- المنطقة الوسطى -->
+        <div class="center-content">
+            
+            <!-- الوقت في أعلى المنتصف (60 ثانية) -->
+            <div class="top-timer">
+                <span id="timer">60</span>
+                <small>ثانية</small>
+            </div>
+
+            <!-- الحرف في منتصف الصفحة -->
+            <div class="center-letter-box">
+                <span class="letter-label">الحرف</span>
+                <div id="active-letter" class="big-letter">أ</div>
+            </div>
+
+            <!-- حقول الإدخال -->
+            <div class="inputs-container">
+                <input type="text" placeholder="إنسان..." id="input-human">
+                <input type="text" placeholder="حيوان..." id="input-animal">
+                <input type="text" placeholder="نبات..." id="input-plant">
+                <input type="text" placeholder="جماد..." id="input-thing">
+                <input type="text" placeholder="بلاد..." id="input-country">
+            </div>
+
+            <!-- المرحلة في أسفل المنتصف -->
+            <div class="bottom-level">
+                المرحلة: <span id="current-round">1</span> / 10
+            </div>
+
+        </div>
+
+        <!-- أزرار اللاعبين على اليسار -->
+        <div id="side-left" class="side-buttons"></div>
+
+    </div>
+
+    <!-- حاوية المفرقعات الاحتفالية -->
+    <div id="confetti-container" class="confetti-container"></div>
+
+    <!-- شاشة النتائج والنهاية -->
+    <div id="results-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modal-title">نتائج المرحلة</h2>
+            <div id="winner-congrat-box" class="congrat-box hidden"></div>
+            <div id="scores-table"></div>
+            <div id="footer-signature" class="signature hidden">مع تحيات أبو سالم المقبالي</div>
+            <button id="next-round-btn" class="btn-main">المرحلة التالية ➔</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
